@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- swiper slider 소스 -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- 여기까지 head 에 추가 -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- 제이쿼리 -->
+  <script src="script/jquery.js"></script>
+  <!--자바스크립트-->
+  <script src="script/script.js"></script>
+  <!--favicon-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="icon" href="img/favicon.ico">
+  <title>문피아 리디자인</title>
+</head>
+
+<body>
+  <body-wrap>
+    <!-- 헤더 -->
+    <div id="wrap">
+      <div id="header">
+        <div id="search-group">
+          <div class="logo">
+            <img src="img/munpia_logo.png" alt="문피아 로고">
+          </div>
+          <div class="search_area">
+            <div class="search">
+              <input type="text" title="검색어 입력" max="255" class="input_text" tabindex="1" accesskey="s"
+                style="ime-mode:active;" placeholder="검색어를 입력해 주세요." onclick="document.getElementById('fbm').value=1;"
+                value data-atcmp-element>
+            </div>
+            <button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit"
+              onclick="window.nclick(this,'sch.action','','',event);">
+              <span class="blind">검색</span>
+              <span class="ico_search_submit"></span>
+            </button>
+          </div>
+          <div class="top_banner">
+            <a href="#"><img src="img/top_banner.png" alt="웹소설 공모대전"></a>
+          </div>
+        </div>
+        <div id="nav">
+          <div class="group_nav">
+            <ul class="list_nav">
+              <li class="nav_item">
+                <a href="#">무료 웹소설</a>
+                <ul class="menu">
+                  <li><a href="#">작가연재</a></li>
+                  <li><a href="#">일반연재</a></li>
+                  <li><a href="#">자유연재</a></li>
+                  <li><a href="#">미리보기</a></li>
+                  <li><a href="#">만화 / 웹툰</a></li>
+                  <li><a href="#">연재한담</a></li>
+                  <li><a href="#">작품홍보</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">유료 웹소설</a>
+                <ul class="menu">
+                  <li><a href="#">선독점작</a></li>
+                  <li><a href="#">연재작</a></li>
+                  <li><a href="#">완결작</a></li>
+                  <li><a href="#">베스트</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">E-book</a>
+                <ul class="menu">
+                  <li><a href="#">선독점작</a></li>
+                  <li><a href="#">신작·연결작</a></li>
+                  <li><a href="#">완결작</a></li>
+                  <li><a href="#">대여작</a></li>
+                  <li><a href="#">베스트</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">성인</a>
+                <ul class="menu">
+                  <li><a href="#">유료 웹소설</a></li>
+                  <li><a href="#">무료 웹소설</a></li>
+                  <li><a href="#">E-book</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">베스트</a>
+
+              </li>
+              <li class="nav_item">
+                <a href="#">이벤트</a>
+                <ul class="menu">
+                  <li><a href="#">문피아 이벤트</a></li>
+                  <li><a href="#">골드 게이지</a></li>
+                  <li><a href="#">당첨자 발표</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">독자마당</a>
+                <ul class="menu">
+                  <li><a href="#">논단 질문 / 답변</a></li>
+                  <li><a href="#">표지 / 삽화</a></li>
+                  <li><a href="#">추천하기</a></li>
+                  <li><a href="#">감상란</a></li>
+                  <li><a href="#">강호정담</a></li>
+                  <li><a href="#">비평란</a></li>
+                  <li><a href="#">서재</a></li>
+                  <li><a href="#">자료실</a></li>
+                  <li><a href="#">독자 설문</a></li>
+                  <li><a href="#">토론마당</a></li>
+                </ul>
+              </li>
+              <li class="nav_item">
+                <a href="#">고객지원</a>
+                <ul class="menu">
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">불펌신고</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">1:1문의</a></li>
+                  <li><a href="#">설문조사</a></li>
+                  <li><a href="#">연재신청</a></li>
+                  <li><a href="#">원고투고</a></li>
+                  <li><a href="#">단편제</a></li>
+                  <li><a href="#">운영자란</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 광고 슬라이더 -->
+    <!-- Swiper -->
+    <!-- 클래스명은 건들이면 안된다. -->
+    <!-- 새로운 클래스명으로 swiper container를 감싼다. -->
+    <div class="main-slider-wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- swiper slide 안에 새로운 클래스 추가 : 커스텀 -->
+            <div class="inner-box">
+              <img src="img/banner1.jpg" alt="slider-img01">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="inner-box">
+              <img src="img/banner2.jpg" alt="slider-img02">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="inner-box">
+              <img src="img/banner3.jpg" alt="slider-img01">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="inner-box">
+              <img src="img/banner4.jpg" alt="slider-img02">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="inner-box">
+              <img src="img/banner5.jpg" alt="slider-img01">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="inner-box">
+              <img src="img/banner6.jpg" alt="slider-img02">
+            </div>
+          </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="btn-next">
+          <img src="img/btn_next.png" alt="">
+        </div>
+        <div class="btn-prev">
+          <img src="img/btn_prev.png" alt="">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- 섹션 - 도서 순위-->
+    <section class="section1">
+      <div class="latest_work">
+          <!--탭 버튼 네비게이션-->
+          <div class="container">
+            <ul class="tabs">
+              <li class="tab-link current" data-tab="tab-1">장르별 최신 작품</li>
+              <li class="tab-link" data-tab="tab-2">공모전 최신 작품</li>
+              <li class="tab-link" data-tab="tab-3">반반무</li>
+              <li class="tab-link" data-tab="tab-4">웹툰</li>
+            </ul>
+            <div id="tab-1" class="tab-content current">
+              <ul class="category" id="al_category_gongmo">
+                <li class="current"><a href="#">연재</a></li>
+                <li><a href="#">판타지</a></li>
+                <li><a href="#">무협</a></li>
+                <li><a href="#">퓨전</a></li>
+                <li><a href="#">게임</a></li>
+                <li><a href="#">로맨스</a></li>
+                <li><a href="#">BL</a></li>
+              </ul>
+              <ul id="new_book_list" class="book_list">
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-3.jpg" alt="게임 속 구원자"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover3-3.jpg" alt="역대급 재벌"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4.png" alt="약 먹는 천재 마법사"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-5.jpg" alt="애독자의 복선"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover5.jpg" alt="문송안함"></a></p>
+                </li>
+              </ul>
+            </div>
+            <div id="tab-2" class="tab-content">
+              <ul class="category" id="al_category_gongmo">
+                <li><a href="#">판타지</a></li>
+                <li><a href="#">무협</a></li>
+                <li><a href="#">퓨전</a></li>
+                <li><a href="#">게임</a></li>
+                <li><a href="#">로맨스</a></li>
+                <li><a href="#">BL</a></li>
+              </ul>
+              <ul id="new_book_list" class="book_list">
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover1.jpg" alt="전독시"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-1.jpg" alt="백망되"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover3-1.jpg" alt="헌영사"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4.png" alt="약천재"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-2.jpg" alt="스자헌"></a></p>
+                </li>
+              </ul>
+            </div>
+            <div id="tab-3" class="tab-content">
+              <ul class="category" id="al_category_gongmo">
+                <li><a href="#">이번주</a></li>
+                <li><a href="#">1주전</a></li>
+                <li><a href="#">2주전</a></li>
+                <li><a href="#">3주전</a></li>
+                <li><a href="#">4주전</a></li>
+              </ul>
+              <ul id="new_book_list" class="book_list">
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-3.jpg" alt="겜구되"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover3-2.jpg" alt="검미군"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-4.png" alt="엔딩메"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover3-5.jpg" alt="탑프듀"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover2-5.jpg" alt="애복회"></a></p>
+                </li>
+              </ul>
+            </div>
+            <div id="tab-4" class="tab-content">
+              <ul class="category" id="al_category_gongmo">
+                <li><a href="#">연재</a></li>
+                <li><a href="#">판타지</a></li>
+                <li><a href="#">무협</a></li>
+                <li><a href="#">퓨전</a></li>
+                <li><a href="#">게임</a></li>
+                <li><a href="#">로맨스</a></li>
+                <li><a href="#">BL</a></li>
+              </ul>
+              <ul id="new_book_list" class="book_list">
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4-1.jpg" alt="별품소"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4-2.jpg" alt="무림서부"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4-3.jpg" alt="낙하잘"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4-4.jpg" alt="블조선"></a></p>
+                </li>
+                <li class="new_book_cell" id="book_cell">
+                  <p class="book"><a href="#"><img src="img/cover4-5.jpg" alt="강숨김"></a></p>
+                </li>
+              </ul>
+            </div>
+      </div>
+    </section>
+    <!-- 섹션 - 금주의 신간-->
+    <section class="section2">
+      <h2>금주의 신간</h2>
+      <div class="today_recommend">
+        <div class="recommende_list">
+          <div class="epsecci0">
+            <div class="epsecci1">
+              <div class="epsecci2"></div>
+              <div class="epsecci3">
+                <ul class="today_recommendation">
+                  <li class="today_recommend">
+                    <a href="#">
+                      <img src="img/cover3-1.jpg" alt="헌터 영업사원 오비환"></a>
+                    <p class="recommend_comment">만년 영업사원, 오비환<br>이세계 유산에 귀속 각성!</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover3-2.jpg" alt="검은머리 미국 대원수"></a>
+                    <p class="recommend_comment">미 육군사관학교에 최초의 <br>한인 생도가 입학했다.</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover3-3.jpg" alt="짜릿한 회귀로 역대급 재벌"></a>
+                    <p class="recommend_comment">재벌 자식이 아니어도<br>재벌 되기 어렵지 않아요</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover3-4.png" alt="데몬 소드"></a>
+                    <p class="recommend_comment">칼을 휙! 휘둘렀더니<br>도련님이 픽! 죽었다</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover3-5.jpg" alt="탑 예능 프로듀서"></a>
+                    <p class="recommend_comment">분명 신입인데,<br>결과물은 스타 PD급?</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 섹션 - 오늘의 추천 도서-->
+    <section class="section2">
+      <h2>오늘, 문피아의 발견</h2>
+      <div class="today_recommend">
+        <div class="recommende_list">
+          <div class="epsecci0">
+            <div class="epsecci1">
+              <div class="epsecci2"></div>
+              <div class="epsecci3">
+                <ul class="today_recommendation">
+                  <li class="today_recommend">
+                    <a href="#">
+                      <img src="img/cover1.jpg" alt="전지적 독자 시점"></a>
+                    <p class="recommend_comment">오직 나만이,이 세계의<br>결말을 알고 있다.</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover2.png" alt="악당은 살고 싶다"></a>
+                    <p class="recommend_comment">999번을 죽는 악당,<br>이제 그게 나다.</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover3.jpg" alt="빌런의 경제학"></a>
+                    <p class="recommend_comment">평행세계의 미래와<br>접촉한 결과가 빌런?</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover4.png" alt="약먹는 천재 마법사"></a>
+                    <p class="recommend_comment">천재적인 재능을 가졌지만<br>약 없이는 육체 능력 꽝</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover5.jpg" alt="문과라도 안 죄송한 이세계로 감"></a>
+                    <p class="recommend_comment">강력한 힘을 발휘하려면<br>아름다운 문장이 필요하다</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 섹션 - 테마 추천 도서-->
+    <section class="section3">
+      <h2>여름에도 시원한 사이다 폭격기!</h2>
+      <div class="today_recommend">
+        <div class="recommende_list">
+          <div class="epsecci0">
+            <div class="epsecci1">
+              <div class="epsecci2"></div>
+              <div class="epsecci3">
+                <ul class="today_recommendation">
+                  <li class="today_recommend">
+                    <a href="#">
+                      <img src="img/cover2-1.jpg" alt="백작가의 망나니가 되었다"></a>
+                    <p class="recommend_comment">그렇다고 해서,<br>망나니로 살 수는 없잖아?</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover2-2.jpg" alt="SSS급 자살헌터"></a>
+                    <p class="recommend_comment">[S급 스킬을 각성합니다.]<br>[단, 이 스킬을 쓰면 죽습니다.]</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover2-3.jpg" alt="게임 속 구원자가 되었다"></a>
+                    <p class="recommend_comment">세상을 구할 때에도<br>효율적으로 구해야 편하다.</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover2-4.png" alt="엔딩 메이커"></a>
+                    <p class="recommend_comment">세상에서 가장 완벽한<br>해피 엔딩을 위하여</p>
+                  </li>
+                  <li class="today_recommend">
+                    <a href="#"><img src="img/cover2-5.jpg" alt="애독자의 복선 회수일지"></a>
+                    <p class="recommend_comment">괴작 소설의 망나니 차남,<br>정체는 고인물 독자?</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+    </section>
+    <!-- 섹션 - 투데이 베스트-->
+    <section class="section4">
+      <div class="best1">
+        <h2><img src="img/t_trend1.png" alt="판타지/무협 투데이 베스트"></h2>
+        <ul class="best_list">
+          <li>
+            <span class="b_numb">1</span>
+            <a href="#">재벌집 천재 손자</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">2</span>
+            <a href="#">아카데미의 금태양</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">3</span>
+            <a href="#">신과 함께 만화천재</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">4</span>
+            <a href="#">코더 이용호</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">5</span>
+            <a href="#">게임속 아카데미의 핵과금러</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">6</span>
+            <a href="#">스펙 쌓는 헌터</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">7</span>
+            <a href="#">고인물이 망캐를 너무 잘함</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">8</span>
+            <a href="#">나 빼고 다 고인물</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">9</span>
+            <a href="#">SSS급 어쌔신 플레이어</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">10</span>
+            <a href="#">남궁세가 초 금지옥엽</a>
+            <span class="hottrend"></span></li>
+        </ul>
+      </div>
+      <div class="best2">
+        <h2><img src="img/t_focus1.png" alt="로맨스 투데이 베스트"></h2>
+        <ul class="best_list">
+          <li><span class="b_numb">1</span>
+            <a href="#">공작이 짝사랑을 시작할 때까지</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">2</span>
+            <a href="#">당신이 이끄시는대로</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">3</span>
+            <a href="#">육아물 엄마는 꼭 죽어야 하나요?</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">4</span>
+            <a href="#">집착 남주의 시한부 변호사가 되었습니다.</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">5</span>
+            <a href="#">감금해주세요, 남주님!</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">6</span>
+            <a href="#">집착광공들이 나를 잡아먹으려고 해!</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">7</span>
+            <a href="#">시한부라서 남주의 형과 결혼했더니 내게 집착한다 </a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">8</span>
+            <a href="#">짝사랑남이 내 스토커였던 건에 관하여</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">9</span>
+            <a href="#">신인데 공주 몸에 들어와버렸다</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">10</span>
+            <a href="#">악역계모가 되었습니다.</a>
+            <span class="hottrend"></span></li>
+        </ul>
+      </div>
+      <div class="best3">
+        <h2><img src="img/t_cuponbest.png" alt="쿠폰 투데이 베스트"></h2>
+        <ul class="best_list">
+          <li><span class="b_numb">1</span>
+            <a href="#">문장</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">2</span>
+            <a href="#">불륜, 첫사랑의 이름</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">3</span>
+            <a href="#">고인물의 비밀</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">4</span>
+            <a href="#">미워도 다시 한번</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">5</span>
+            <a href="#">사탄에게도 사정이 있다</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">6</span>
+            <a href="#">밸런스 게임</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">7</span>
+            <a href="#">토크 플레이 워크</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">8</span>
+            <a href="#">헬프 미, 헬프 유</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">9</span>
+            <a href="#">타인의 조건</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">10</span>
+            <a href="#">무정 연인</a>
+            <span class="hottrend"></span></li>
+        </ul>
+      </div>
+      <div class="best4">
+        <h2><img src="img/t_rookie.png" alt="쿠폰 투데이 베스트"></h2>
+        <ul class="best_list">
+          <li><span class="b_numb">1</span>
+            <a href="#">문장</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">2</span>
+            <a href="#">불륜, 첫사랑의 이름</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">3</span>
+            <a href="#">고인물의 비밀</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">4</span>
+            <a href="#">미워도 다시 한번</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">5</span>
+            <a href="#">사탄에게도 사정이 있다</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">6</span>
+            <a href="#">밸런스 게임</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">7</span>
+            <a href="#">토크 플레이 워크</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">8</span>
+            <a href="#">헬프 미, 헬프 유</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">9</span>
+            <a href="#">타인의 조건</a>
+            <span class="hottrend"></span></li>
+          <li><span class="b_numb">10</span>
+            <a href="#">무정 연인</a>
+            <span class="hottrend"></span></li>
+        </ul>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <footer id="footer">
+      <table>
+        <tbody>
+          <tr>
+            <td width="48%">
+              <section class="alliance">
+                <h3 class="zoom">
+                  <span class="pic-alliance"><img src="img/footer1.png" alt="문피아 제휴업체"></span>
+                </h3>
+                <ul class="items zoom">
+                  <li><a href="http://raemongraein.co.kr/" target="_blank" class="item">
+                      <img src="img/logo-rmri2.png" alt="래몽래인"></a></li>
+                  <li><a class="item">
+                      <img src="img/logo-studio329.png" alt="STUDIO 329">
+                    </a></li>
+                  <li><a href="http://www.mk.co.kr/" target="_blank" class="item">
+                      <img src="img/logo-mk2.png" alt="매일경제"></a></li>
+                  <li><a href="https://twitter.com/chorokstars" target="_blank" class="item">
+                      <img src="img/logo-crst2.png" alt="CMG초록별"></a></li>
+                </ul>
+              </section>
+            </td>
+            <td width="4%">&nbsp;</td>
+            <td width="48%">
+              <section class="alliance">
+                <h3 class="zoom">
+                  <span class="pic-alliance2"><img src="img/footer2.png" alt="수상 및 선정"></span>
+                </h3>
+                <ul class="items zoom">
+                  <li><a href="#" class="item">
+                      <img src="img/logo-kict3.png" alt="대한민국 인터넷 대상"></a></li>
+                  <li><a href="http://www.kibo.or.kr/" class="item">
+                      <img src="img/logo-vt3.png" alt="기술보증기금"></a></li>
+                  <li><a href="https://www.copyrightok.kr/" class="item">
+                      <img src="img/logo_ok_mark.png" alt="저작권OK"></a></li>
+                  <li><a href="#" class="item">
+                      <img src="img/logo-isms.png" alt="ISMS"></a></li>
+                </ul>
+              </section>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="navtail">
+        <ul class="items">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">유료이용약관</a></li>
+          <li class="prov"><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">청소년보호정책</a></li>
+          <li><a href="#">광고및제휴</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">오시는길</a></li>
+        </ul>
+      </nav>
+      <address class="info">
+        <span class="mpic pic-gray-logo">문피아</span>
+        서울특별시 강남구 강남대로 308 두산랜드마크타워 12층"
+        <br>
+        (주)문피아, 통판 : 2013-서울서초-0395, 사업 : 264-81-08435"
+        <br>
+        대표자 : 김환철, 신동운, 개인정보책임자 : 신동운(privacy@munpia.com)
+        <br>
+        고객센터 : 1644-6498, FAX : 070-8290-7700
+        <br>
+        Email : korea@munpia.com
+        <br>
+        <br>
+        Copyright ©
+        <a href="https://www.munpia.com" title="Munpia">Munpia,</a>
+        All Rights Reserved.
+      </address>
+    </footer>
+  </body-wrap>
+</body>
+
+</html>
